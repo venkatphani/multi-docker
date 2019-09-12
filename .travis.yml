@@ -9,7 +9,7 @@ script:
   - docker run pradeep/react-test npm test -- --coverage
 
 after_success:
-  - docker build -t pradeep/multi-client ./client
+  - docker build -t pradeep/multi-clientt ./client
   - docker build -t pradeep/multi-nginx ./nginx
   - docker build -t pradeep/multi-server ./server
   - docker build -t pradeep/multi-worker ./worker
@@ -17,7 +17,7 @@ after_success:
   #Add env variables in the travis.org for this project.. docker usernamd and docker password
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   #Take these images and push them to docker-hub
-  - docker push pradeep/multi-client
+  - docker push pradeep/multi-clientt
   - docker push pradeep/multi-nginx
   - docker push pradeep/multi-server
   - docker push pradeep/multi-worker
